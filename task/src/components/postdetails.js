@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button } from "reactstrap";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function PostDetails(props){
-    let history = useHistory();
     const [post, setPost] = useState({});
 
     useEffect(() => {
@@ -17,10 +16,6 @@ function PostDetails(props){
         const post = await fetchItem.json();
         setPost(post);
     };
-
-    function handleClick() {
-        history.push("/");
-      }
 
     return (
         <div>
@@ -47,7 +42,9 @@ function PostDetails(props){
                 </tbody>
                 
             </Table>
-            <Button type="button" className="btn btn-success offset-md-2" onClick={handleClick} >Go back!</Button>
+            <Link to="/">
+                <Button type="button" className="btn btn-info offset-md-2">Go back!</Button>
+            </Link>
         </div>
     );
 }

@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import { Table, Button } from "reactstrap";
 
-
 class PostList extends Component {
-
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -29,16 +28,15 @@ class PostList extends Component {
     return (
         <div className="PostList">
             <h4 align="center">This is posts list page</h4>
-            <hr></hr>    
-            <Table className="col-md-8 offset-2 table-dark">
+            <hr></hr>
+            <Button type="button" className="btn btn-success offset-md-2 " onClick={() => history.push(`/addpost`)}>Add new post!</Button>    
+            <Table className="col-md-8 offset-2 mt-2 table-dark">
                 <thead>
                     <tr>
                         <th>User ID</th>
                         <th>Post ID</th>
                         <th>Title</th>
-                        <th>Body
-                            <Button type="button" className="btn btn-success ml-3">Add new post!</Button>
-                        </th>
+                        <th>Body</th>
                     </tr>
                 </thead>
                 <tbody>
